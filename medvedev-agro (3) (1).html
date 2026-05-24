@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>ФОП Медведєв Олександр Олександрович — Агропослуги, Київська обл.</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;900&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --white:#fff;--off:#f4f7fb;--light:#dce6f5;--mid:#6b9dd4;
+  --blue:#1a4fa0;--dark:#0d2a5e;--text:#1a2a44;--muted:#6b7a94;
+  --accent:#2563c4;--green:#1a7a3c;--gold:#e8a020;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:var(--white);color:var(--text);font-size:16px;line-height:1.6}
+img{display:block;max-width:100%}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--light);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:66px}
+.nav-logo{font-family:'Unbounded',sans-serif;font-size:.72rem;font-weight:700;color:var(--blue);letter-spacing:.04em;line-height:1.35;text-decoration:none}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:.85rem;font-weight:600;transition:color .2s}
+.nav-links a:hover{color:var(--blue)}
+.nav-cta{background:var(--blue);color:#fff;padding:9px 20px;border-radius:6px;font-size:.82rem;font-weight:700;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--dark)}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,var(--dark) 0%,var(--blue) 50%,#2e7bcf 100%);color:#fff;padding:120px 5vw 100px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='1' fill='rgba(255,255,255,.04)'/%3E%3C/svg%3E") repeat}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);border-radius:100px;padding:5px 16px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.6rem;font-weight:600}
+.hero h1{font-family:'Unbounded',sans-serif;font-size:clamp(1.9rem,4.5vw,3.4rem);font-weight:900;line-height:1.12;max-width:720px;margin-bottom:1.3rem}
+.hero h1 em{font-style:normal;color:#7ec8ff}
+.hero-desc{font-size:1.05rem;opacity:.87;max-width:540px;margin-bottom:2.4rem;font-weight:300;line-height:1.7}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem}
+.btn{display:inline-block;padding:14px 30px;border-radius:7px;font-size:.9rem;font-weight:700;text-decoration:none;transition:all .2s;cursor:pointer;border:none;font-family:'Manrope',sans-serif}
+.btn-white{background:#fff;color:var(--blue)}
+.btn-white:hover{background:var(--off);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.15)}
+.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.45)}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.hero-stats{display:flex;gap:0;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.15);padding-top:2rem}
+.stat{padding-right:3rem;margin-right:3rem;border-right:1px solid rgba(255,255,255,.15)}
+.stat:last-child{border-right:none}
+.stat strong{display:block;font-family:'Unbounded',sans-serif;font-size:2rem;font-weight:900;line-height:1}
+.stat span{font-size:.78rem;opacity:.65;letter-spacing:.04em;margin-top:4px;display:block}
+
+/* ── SECTIONS ── */
+section{padding:90px 5vw}
+.sec-label{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+h2{font-family:'Unbounded',sans-serif;font-size:clamp(1.5rem,3vw,2.3rem);font-weight:700;color:var(--dark);margin-bottom:.6rem;line-height:1.15}
+.sec-intro{color:var(--muted);font-size:.95rem;max-width:560px;margin-bottom:3rem;line-height:1.7}
+
+/* ── ПЕРЕВАГИ ── */
+#переваги{background:var(--dark);color:#fff}
+#переваги h2{color:#fff}
+#переваги .sec-label{color:#7ec8ff}
+#переваги .sec-intro{color:rgba(255,255,255,.6)}
+.advantages-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.adv-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:2rem 1.6rem;transition:background .2s}
+.adv-card:hover{background:rgba(255,255,255,.1)}
+.adv-icon{font-size:2.2rem;margin-bottom:1rem}
+.adv-card h3{font-family:'Unbounded',sans-serif;font-size:.88rem;font-weight:700;color:#fff;margin-bottom:.5rem}
+.adv-card p{font-size:.83rem;color:rgba(255,255,255,.6);line-height:1.6}
+
+/* ── ПОСЛУГИ ── */
+#послуги{background:var(--off)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+.service-card{background:#fff;border-radius:12px;padding:2rem 1.8rem;border:1.5px solid var(--light);transition:all .25s;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--blue);transform:scaleY(0);transform-origin:bottom;transition:transform .3s}
+.service-card:hover{box-shadow:0 8px 32px rgba(26,79,160,.1);transform:translateY(-3px)}
+.service-card:hover::before{transform:scaleY(1)}
+.service-icon{font-size:2rem;margin-bottom:1rem}
+.service-card h3{font-family:'Unbounded',sans-serif;font-size:.88rem;font-weight:700;color:var(--dark);margin-bottom:.5rem}
+.service-card p{font-size:.84rem;color:var(--muted);line-height:1.65;margin-bottom:1rem}
+.service-price{font-size:.82rem;font-weight:700;color:var(--accent);background:#eef4ff;border-radius:100px;padding:3px 12px;display:inline-block}
+
+/* ── ТЕХНІКА ── */
+.tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.6rem}
+.tech-card{border:1.5px solid var(--light);border-radius:14px;overflow:hidden;transition:box-shadow .25s,transform .25s;background:#fff}
+.tech-card:hover{box-shadow:0 12px 40px rgba(26,79,160,.13);transform:translateY(-4px)}
+.tech-img-wrap{width:100%;height:220px;overflow:hidden;position:relative;background:var(--light)}
+.tech-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.tech-card:hover .tech-img-wrap img{transform:scale(1.06)}
+.tech-tag{position:absolute;top:12px;left:12px;background:var(--blue);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 11px;border-radius:100px}
+.tech-body{padding:1.4rem 1.6rem}
+.tech-body h3{font-family:'Unbounded',sans-serif;font-size:.88rem;font-weight:700;color:var(--dark);margin-bottom:.2rem}
+.tech-body .model{font-size:.78rem;color:var(--accent);font-weight:700;margin-bottom:.8rem;letter-spacing:.02em}
+.tech-body p{font-size:.82rem;color:var(--muted);line-height:1.55;margin-bottom:1rem}
+.tech-specs{display:grid;grid-template-columns:1fr 1fr;gap:.4rem .8rem;border-top:1px solid var(--light);padding-top:.9rem}
+.spec{font-size:.75rem;color:var(--muted)}
+.spec strong{display:block;font-size:.78rem;color:var(--text);font-weight:600}
+
+/* ── ЦІНИ ── */
+#ціни{background:var(--off)}
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem}
+.price-card{background:#fff;border-radius:14px;border:1.5px solid var(--light);padding:2rem 1.8rem;transition:all .25s;text-align:center}
+.price-card:hover{box-shadow:0 8px 32px rgba(26,79,160,.1);transform:translateY(-3px)}
+.price-card.featured{border-color:var(--blue);background:linear-gradient(135deg,#eef4ff,#f0f6ff)}
+.price-card h3{font-family:'Unbounded',sans-serif;font-size:.85rem;font-weight:700;color:var(--dark);margin-bottom:.8rem}
+.price-amount{font-family:'Unbounded',sans-serif;font-size:2rem;font-weight:900;color:var(--blue);line-height:1}
+.price-unit{font-size:.78rem;color:var(--muted);margin-bottom:1.2rem;margin-top:.3rem}
+.price-features{list-style:none;font-size:.82rem;color:var(--muted);text-align:left;display:flex;flex-direction:column;gap:.5rem}
+.price-features li::before{content:'✓ ';color:var(--green);font-weight:700}
+.price-badge{background:var(--blue);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:100px;margin-bottom:1rem;display:inline-block}
+
+/* ── ПРОЦЕС ── */
+.process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0;position:relative}
+.process-steps::before{content:'';position:absolute;top:28px;left:5%;right:5%;height:2px;background:var(--light);z-index:0}
+.step{text-align:center;padding:0 1rem;position:relative;z-index:1}
+.step-num{width:56px;height:56px;border-radius:50%;background:var(--blue);color:#fff;font-family:'Unbounded',sans-serif;font-size:1.1rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.step h4{font-family:'Unbounded',sans-serif;font-size:.78rem;font-weight:700;color:var(--dark);margin-bottom:.4rem}
+.step p{font-size:.78rem;color:var(--muted);line-height:1.5}
+
+/* ── ВІДГУКИ ── */
+#відгуки{background:var(--off)}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.3rem}
+.review-card{background:#fff;border:1.5px solid var(--light);border-radius:12px;padding:1.8rem;position:relative}
+.review-card::after{content:'"';position:absolute;top:.8rem;right:1.4rem;font-family:'Unbounded',sans-serif;font-size:5rem;color:var(--light);line-height:1;pointer-events:none}
+.stars{color:var(--gold);font-size:.9rem;margin-bottom:.8rem;letter-spacing:2px}
+.review-card blockquote{font-size:.88rem;color:var(--text);line-height:1.7;font-style:italic;margin-bottom:1.2rem}
+.reviewer{display:flex;align-items:center;gap:.8rem}
+.avatar{width:40px;height:40px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.85rem;flex-shrink:0}
+.reviewer-info strong{display:block;font-size:.86rem;font-weight:700;color:var(--dark)}
+.reviewer-info span{font-size:.76rem;color:var(--muted)}
+
+/* ── FAQ ── */
+.faq-list{max-width:760px;display:flex;flex-direction:column;gap:.8rem}
+.faq-item{border:1.5px solid var(--light);border-radius:10px;overflow:hidden}
+.faq-q{width:100%;background:#fff;border:none;padding:1.1rem 1.4rem;text-align:left;font-family:'Manrope',sans-serif;font-size:.9rem;font-weight:700;color:var(--dark);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:background .2s}
+.faq-q:hover{background:#eef4ff}
+.faq-q .arrow{font-size:1rem;color:var(--accent);transition:transform .3s;flex-shrink:0}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s}
+.faq-a-inner{padding:0 1.4rem 1.2rem;font-size:.87rem;color:var(--muted);line-height:1.7;background:#fff}
+.faq-item.open .faq-a{max-height:300px}
+.faq-item.open .arrow{transform:rotate(180deg)}
+
+/* ── ПАРТНЕРИ ── */
+#партнери{background:var(--dark);padding:60px 5vw}
+#партнери .sec-label{color:#7ec8ff}
+#партнери h2{color:#fff;margin-bottom:2.5rem}
+.partners-row{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
+.partner-badge{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:.9rem 1.6rem;font-family:'Unbounded',sans-serif;font-size:.78rem;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.04em;transition:all .2s}
+.partner-badge:hover{background:rgba(255,255,255,.12);color:#fff}
+
+/* ── КОНТАКТИ ── */
+.contact-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+@media(max-width:720px){.contact-wrapper{grid-template-columns:1fr}}
+.contact-info p{font-size:.93rem;color:var(--muted);margin-bottom:2rem;line-height:1.7}
+.contact-item{display:flex;align-items:flex-start;gap:.9rem;margin-bottom:1.1rem}
+.contact-item-icon{width:40px;height:40px;border-radius:10px;background:var(--light);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;margin-top:2px}
+.contact-item-text strong{display:block;font-size:.75rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px}
+.contact-item-text a,.contact-item-text span{font-size:.95rem;color:var(--text);text-decoration:none}
+.contact-item-text a:hover{color:var(--blue)}
+.contact-form{display:flex;flex-direction:column;gap:1rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:520px){.form-row{grid-template-columns:1fr}}
+.contact-form label{display:flex;flex-direction:column;gap:5px;font-size:.76rem;font-weight:700;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+.contact-form input,.contact-form textarea,.contact-form select{padding:12px 15px;border:1.5px solid var(--light);border-radius:8px;font-family:'Manrope',sans-serif;font-size:.9rem;color:var(--text);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,196,.08)}
+.contact-form textarea{resize:vertical;min-height:115px}
+.btn-primary{background:var(--blue);color:#fff;padding:14px 30px;border-radius:8px;font-size:.9rem;font-weight:700;cursor:pointer;border:none;transition:background .2s,transform .2s;align-self:flex-start;font-family:'Manrope',sans-serif}
+.btn-primary:hover{background:var(--dark);transform:translateY(-1px)}
+
+/* ── FOOTER ── */
+footer{background:var(--dark);color:rgba(255,255,255,.55);padding:50px 5vw 30px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
+@media(max-width:700px){.footer-grid{grid-template-columns:1fr}}
+.footer-brand{font-family:'Unbounded',sans-serif;font-size:.8rem;font-weight:700;color:#fff;line-height:1.5;margin-bottom:.8rem}
+.footer-tagline{font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.6}
+.footer-col h4{font-family:'Unbounded',sans-serif;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.9rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.footer-col ul li a{font-size:.82rem;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
+.footer-col ul li a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;font-size:.78rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.divider{width:48px;height:3px;background:var(--accent);border-radius:2px;margin-bottom:1.6rem}
+
+/* ── MODAL ── */
+.modal-overlay{position:fixed;inset:0;z-index:999;background:rgba(10,25,55,.65);backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity .25s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:#fff;border-radius:16px;padding:2.4rem 2.2rem;width:100%;max-width:550px;max-height:92vh;overflow-y:auto;transform:translateY(30px) scale(.97);transition:transform .3s cubic-bezier(.22,1,.36,1);position:relative}
+.modal-overlay.open .modal{transform:translateY(0) scale(1)}
+.modal-close{position:absolute;top:1.1rem;right:1.2rem;background:var(--off);border:none;border-radius:50%;width:34px;height:34px;font-size:1rem;cursor:pointer;color:var(--muted);display:flex;align-items:center;justify-content:center;transition:background .15s}
+.modal-close:hover{background:var(--light)}
+.modal-title{font-family:'Unbounded',sans-serif;font-size:1.18rem;font-weight:700;color:var(--dark);margin-bottom:.3rem}
+.modal-subtitle{font-size:.84rem;color:var(--muted);margin-bottom:1.4rem}
+.modal-loc{display:inline-flex;align-items:center;gap:6px;background:#eef4ff;border:1px solid var(--light);border-radius:100px;padding:5px 14px;font-size:.8rem;color:var(--blue);font-weight:600;margin-bottom:1.4rem}
+.modal-form{display:flex;flex-direction:column;gap:.9rem}
+.modal-form label{display:flex;flex-direction:column;gap:5px;font-size:.76rem;font-weight:700;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+.modal-form input,.modal-form select,.modal-form textarea{padding:12px 15px;border:1.5px solid var(--light);border-radius:9px;font-family:'Manrope',sans-serif;font-size:.9rem;color:var(--text);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+.modal-form input:focus,.modal-form select:focus,.modal-form textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,196,.08)}
+.modal-form textarea{resize:vertical;min-height:90px}
+.modal-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+@media(max-width:480px){.modal-row{grid-template-columns:1fr}}
+.modal-btn{background:var(--blue);color:#fff;padding:15px;border-radius:9px;font-size:.95rem;font-weight:700;cursor:pointer;border:none;width:100%;margin-top:.4rem;transition:background .2s,transform .15s;font-family:'Manrope',sans-serif}
+.modal-btn:hover{background:var(--dark);transform:translateY(-1px)}
+
+/* ── TOAST ── */
+#toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--dark);color:#fff;padding:13px 26px;border-radius:9px;font-size:.88rem;font-weight:600;opacity:0;transition:all .35s;z-index:1100;white-space:nowrap;box-shadow:0 8px 30px rgba(0,0,0,.3)}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:640px){
+  nav{padding:0 4vw}
+  .nav-links{gap:.9rem}
+  .nav-links a{font-size:.78rem}
+  .nav-cta{display:none}
+  section{padding:64px 4vw}
+  .hero{padding:80px 4vw 70px}
+  .hero-stats{gap:1.5rem}
+  .stat{padding-right:1.5rem;margin-right:1.5rem}
+  .process-steps::before{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <a class="nav-logo" href="#">ФОП Медведєв<br>Олександр Олександрович</a>
+  <ul class="nav-links">
+    <li><a href="#послуги">Послуги</a></li>
+    <li><a href="#техніка">Техніка</a></li>
+    <li><a href="#ціни">Ціни</a></li>
+    <li><a href="#відгуки">Відгуки</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#контакти">Контакти</a></li>
+  </ul>
+  <button class="nav-cta btn" onclick="openModal()">Замовити</button>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="головна">
+  <div class="hero-badge">🌾 Агропослуги · Київська обл. · с. Стайки</div>
+  <h1>Надійна техніка<br>для <em>вашого</em> поля</h1>
+  <p class="hero-desc">Якісна обробка землі, посів і збирання врожаю. Понад 10 років досвіду. Сучасний парк техніки John Deere, Lamborghini, Claas. Своєчасне виконання у будь-якому обсязі — від 10 до 1000+ га.</p>
+  <div class="hero-cta">
+    <button class="btn btn-white" onclick="openModal()">Замовити послугу</button>
+    <a href="#послуги" class="btn btn-outline">Переглянути послуги</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><strong>10+</strong><span>років досвіду</span></div>
+    <div class="stat"><strong>500+</strong><span>га оброблено</span></div>
+    <div class="stat"><strong>80+</strong><span>клієнтів</span></div>
+    <div class="stat"><strong>8</strong><span>одиниць техніки</span></div>
+  </div>
+</section>
+
+<!-- ═══ ПЕРЕВАГИ ═══ -->
+<section id="переваги">
+  <div class="sec-label">Чому обирають нас</div>
+  <h2>Наші переваги</h2>
+  <p class="sec-intro">Ми не просто виконуємо роботу — ми дбаємо про результат кожного клієнта.</p>
+  <div class="advantages-grid">
+    <div class="adv-card">
+      <div class="adv-icon">⚡</div>
+      <h3>Оперативність</h3>
+      <p>Виїзд техніки в день замовлення. Не змушуємо чекати — сезон не терпить зволікань.</p>
+    </div>
+    <div class="adv-card">
+      <div class="adv-icon">🛡️</div>
+      <h3>Якість і точність</h3>
+      <p>GPS-навігація на всій техніці. Контроль глибини, норми висіву та перекриттів.</p>
+    </div>
+    <div class="adv-card">
+      <div class="adv-icon">💰</div>
+      <h3>Прозорі ціни</h3>
+      <p>Фіксована ставка за гектар без прихованих доплат. Оплата після виконання роботи.</p>
+    </div>
+    <div class="adv-card">
+      <div class="adv-icon">🔧</div>
+      <h3>Власний сервіс</h3>
+      <p>Штатний механік та запчастини на складі. Ніяких простоїв через поломки в полі.</p>
+    </div>
+    <div class="adv-card">
+      <div class="adv-icon">🌍</div>
+      <h3>Зона покриття</h3>
+      <p>Обслуговуємо Кагарлицький, Обухівський, Миронівський та суміжні райони.</p>
+    </div>
+    <div class="adv-card">
+      <div class="adv-icon">📋</div>
+      <h3>Документи</h3>
+      <p>Офіційний договір, акт виконаних робіт, розрахунок безготівкою або готівкою.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ПОСЛУГИ ═══ -->
+<section id="послуги">
+  <div class="sec-label">Що ми пропонуємо</div>
+  <h2>Послуги</h2>
+  <p class="sec-intro">Повний цикл агросервісу — від підготовки ґрунту до збирання і транспортування врожаю.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🌱</div>
+      <h3>Оранка та обробіток ґрунту</h3>
+      <p>Глибока оранка оборотним плугом до 35 см, культивація, дискування дисковою бороною. Підготовка поля під будь-яку культуру з дотриманням агротехнічних норм.</p>
+      <span class="service-price">від 350 грн/га</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌾</div>
+      <h3>Посів зернових та олійних</h3>
+      <p>Точний пневматичний посів пшениці, кукурудзи, соняшнику, ячменю, ріпаку. GPS-контроль перекриттів, точне дотримання норм висіву по кожній секції.</p>
+      <span class="service-price">від 300 грн/га</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🚜</div>
+      <h3>Збирання врожаю</h3>
+      <p>Комбайнування зернових і олійних культур комбайном Claas Lexion. Мінімальні втрати, регулювання молотарки під кожну культуру, вивантаження на ходу.</p>
+      <span class="service-price">від 500 грн/га</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💧</div>
+      <h3>Внесення добрив та ЗЗР</h3>
+      <p>Обприскування посівів гербіцидами, фунгіцидами, інсектицидами. Розкидання мінеральних добрив центрифужним розкидачем. Штанга 28–36 м.</p>
+      <span class="service-price">від 180 грн/га</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🚛</div>
+      <h3>Перевезення зерна</h3>
+      <p>Транспортування зерна власним зерновозом КамАЗ (10 т) з поля на склад або елеватор. Обслуговуємо елеватори у Кагарлику, Миронівці, Обухові.</p>
+      <span class="service-price">від 120 грн/т</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📐</div>
+      <h3>Планування поверхні</h3>
+      <p>Вирівнювання рельєфу поля для поліпшення поверхневого і внутрішньогрунтового дренажу. Ліквідація западин, де застоюється вода.</p>
+      <span class="service-price">за домовленістю</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌿</div>
+      <h3>Культивація та боронування</h3>
+      <p>Весняне закриття вологи, передпосівна культивація, боронування для знищення кірки та бур'янів. Ширина захвату до 9 м.</p>
+      <span class="service-price">від 220 грн/га</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏗️</div>
+      <h3>Підготовка нових угідь</h3>
+      <p>Розорювання залежів та перелогів, видалення чагарників, глибоке розпушування чизелем для покращення водопроникності ґрунту.</p>
+      <span class="service-price">за домовленістю</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ПРОЦЕС ═══ -->
+<section id="процес" style="background:var(--white)">
+  <div class="sec-label">Як ми працюємо</div>
+  <h2>Процес замовлення</h2>
+  <p class="sec-intro">Від дзвінка до виконання — 4 простих кроки.</p>
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4>Заявка</h4>
+      <p>Телефонуйте або заповнюйте форму на сайті. Вкажіть площу, культуру та бажані строки.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4>Узгодження</h4>
+      <p>Передзвонюємо протягом 1 год., погоджуємо ціну та дату виїзду техніки.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4>Виконання</h4>
+      <p>Приїжджаємо у домовлений час. Ви контролюєте якість у реальному часі.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h4>Оплата</h4>
+      <p>Підписуємо акт виконаних робіт. Оплата готівкою або на картку після завершення.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ТЕХНІКА ═══ -->
+<section id="техніка" style="background:var(--off)">
+  <div class="sec-label">Наш парк</div>
+  <h2>Техніка</h2>
+  <p class="sec-intro">8 одиниць сучасної техніки провідних світових брендів у постійній готовності.</p>
+  <div class="tech-grid">
+
+    <div class="tech-card">
+      <div class="tech-img-wrap">
+        <span class="tech-tag">Трактор</span>
+        <img src="https://images.unsplash.com/photo-1605460375648-278bcbd579a6?w=700&q=82&fit=crop" alt="Трактор Lamborghini" loading="lazy"/>
+      </div>
+      <div class="tech-body">
+        <h3>Трактор Lamborghini</h3>
+        <div class="model">Lamborghini Nitro 120 DT 4WD</div>
+        <p>Потужний трактор від легендарного бренду з повним приводом. Ідеальний для важких ґрунтів Київщини, оранки та культивації.</p>
+        <div class="tech-specs">
+          <div class="spec"><strong>Потужність</strong>120 к.с.</div>
+          <div class="spec"><strong>Привід</strong>4WD</div>
+          <div class="spec"><strong>Пальне</strong>~14 л/год</div>
+          <div class="spec"><strong>Рік</strong>2019</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech-card">
+      <div class="tech-img-wrap">
+        <span class="tech-tag">Трактор</span>
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=82&fit=crop" alt="John Deere 8R 310" loading="lazy"/>
+      </div>
+      <div class="tech-body">
+        <h3>Трактор John Deere</h3>
+        <div class="model">John Deere 8R 310</div>
+        <p>Флагманський ряд-крон трактор для найважчих операцій. GPS AutoTrac, моніторинг продуктивності, 6-циліндровий двигун PowerTech.</p>
+        <div class="tech-specs">
+          <div class="spec"><strong>Потужність</strong>310 к.с.</div>
+          <div class="spec"><strong>Привід</strong>MFWD</div>
+          <div class="spec"><strong>Пальне</strong>~18 л/год</div>
+          <div class="spec"><strong>Рік</strong>2021</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech-card">
+      <div class="tech-img-wrap">
+        <span class="tech-tag">Комбайн</span>
+        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=700&q=82&fit=crop" alt="Claas Lexion 770" loading="lazy"/>
+      </div>
+      <div class="tech-body">
+        <h3>Зернозбиральний комбайн</h3>
+        <div class="model">Claas Lexion 770</div>
+        <p>Один з найпотужніших комбайнів у галузі. Гібридна система обмолоту APS, жатка 9 м, бункер 14 000 л. Збирання пшениці, ячменю, кукурудзи, соняшнику.</p>
+        <div class="tech-specs">
+          <div class="spec"><strong>Потужність</strong>503 к.с.</div>
+          <div class="spec"><strong>Бункер</strong>14 000 л</div>
+          <div class="spec"><strong>Жатка</strong>9 м</div>
+          <div class="spec"><strong>Рік</strong>2018</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech-card">
+      <div class="tech-img-wrap">
+        <span class="tech-tag">Сівалка</span>
+        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=700&q=82&fit=crop" alt="Сівалка Amazone EDX" loading="lazy"/>
+      </div>
+      <div class="tech-body">
+        <h3>Пневматична сівалка</h3>
+        <div class="model">Amazone EDX 9000-TC</div>
+        <p>Точний посів з електронним нормуванням по кожній секції. Підходить для кукурудзи, соняшнику та великонасінних культур. ISOBUS-управління.</p>
+        <div class="tech-specs">
+          <div class="spec"><strong>Захват</strong>9 м</div>
+          <div class="spec"><strong>Секцій</strong>12</div>
+          <div class="spec"><strong>Міжряддя</strong>70 см</div>
+          <div class="spec"><strong>Рік</strong>2020</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech-card">
+      <div class="tech-img-wrap">
+        <span class="tech-tag">Обприскувач</span>
+        <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=700&q=82&fit=crop" alt="Обприскувач Amazone Pantera" loading="lazy"/>
+      </div>
+      <div class="tech-body">
+        <h3>Причіпний обприскувач</h3>
+        <div class="model">Amazone UX 11200</div>
+        <p>Великооб'ємний обприскувач для внесення ЗЗР та рідких добрив. Секційне перекриття, промивка баку на ходу, ComfortPack управління.</p>
+        <div class="tech-specs">
+          <div class="spec"><strong>Ємність</strong>11 200 л</div>
+          <div class="spec"><strong>Штанга</strong>36 м</div>
+          <div class="spec"><strong>Секцій</strong>9</div>
+          <div class="spec"><strong>Рік</strong>2022</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech-card">
+      <div class="tech-img-wrap">
+        <span class="tech-tag">Культиватор</span>
+        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&q=82&fit=crop" alt="Horsch Joker дискова борона" loading="lazy"/>
+      </div>
+      <div class="tech-body">
+        <h3>Дискова борона</h3>
+        <div class="model">Horsch Joker 8 RT+</div>
+        <p>Швидкісний поверхневий обробіток до 15 км/год. Якісна заробка пожнивних решток, вирівнювання поверхні, передпосівна підготовка.</p>
+        <div class="tech-specs">
+          <div class="spec"><strong>Захват</strong>8 м</div>
+          <div class="spec"><strong>Швидкість</strong>до 15 км/год</div>
+          <div class="spec"><strong>Тип</strong>дисковий</div>
+          <div class="spec"><strong>Рік</strong>2017</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech-card">
+      <div class="tech-img-wrap">
+        <span class="tech-tag">Плуг</span>
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&q=82&fit=crop" alt="Оборотний плуг у полі" loading="lazy"/>
+      </div>
+      <div class="tech-body">
+        <h3>Оборотний плуг</h3>
+        <div class="model">Lemken EurOpal 8</div>
+        <p>Полицева оранка на глибину 25–35 см з повним обертом скиби. Знищення бур'янів, заробка органіки, підрізання кореневищ. 8-корпусний.</p>
+        <div class="tech-specs">
+          <div class="spec"><strong>Корпусів</strong>8</div>
+          <div class="spec"><strong>Глибина</strong>25–35 см</div>
+          <div class="spec"><strong>Захват</strong>до 3.6 м</div>
+          <div class="spec"><strong>Рік</strong>2015</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech-card">
+      <div class="tech-img-wrap">
+        <span class="tech-tag">Зерновоз</span>
+        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=700&q=82&fit=crop" alt="Зерновоз вантажний" loading="lazy"/>
+      </div>
+      <div class="tech-body">
+        <h3>Вантажний зерновоз</h3>
+        <div class="model">КамАЗ 5511</div>
+        <p>Оперативне перевезення зерна з поля на склад або елеватор. Кузов з боковим розвантаженням, тент. Обслуговуємо елеватори Кагарлика, Миронівки, Обухова.</p>
+        <div class="tech-specs">
+          <div class="spec"><strong>Вантажність</strong>10 т</div>
+          <div class="spec"><strong>Об'єм кузова</strong>7.8 м³</div>
+          <div class="spec"><strong>Пальне</strong>~32 л/100 км</div>
+          <div class="spec"><strong>Рік</strong>2016</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ ЦІНИ ═══ -->
+<section id="ціни">
+  <div class="sec-label">Вартість послуг</div>
+  <h2>Ціни</h2>
+  <p class="sec-intro">Прозора і фіксована ціна за гектар. Без доплат за паливо — все включено.</p>
+  <div class="price-grid">
+    <div class="price-card">
+      <h3>Оранка</h3>
+      <div class="price-amount">350</div>
+      <div class="price-unit">грн / га</div>
+      <ul class="price-features">
+        <li>Глибина до 35 см</li>
+        <li>Оборотний плуг Lemken</li>
+        <li>GPS-курсовказівник</li>
+        <li>Акт виконаних робіт</li>
+      </ul>
+    </div>
+    <div class="price-card featured">
+      <div class="price-badge">Популярне</div>
+      <h3>Посів + Оранка</h3>
+      <div class="price-amount">620</div>
+      <div class="price-unit">грн / га (комплекс)</div>
+      <ul class="price-features">
+        <li>Оранка + дискування</li>
+        <li>Точний пневматичний посів</li>
+        <li>Економія 10% від окремо</li>
+        <li>Пріоритетний виїзд</li>
+      </ul>
+    </div>
+    <div class="price-card">
+      <h3>Збирання врожаю</h3>
+      <div class="price-amount">500</div>
+      <div class="price-unit">грн / га</div>
+      <ul class="price-features">
+        <li>Комбайн Claas Lexion 770</li>
+        <li>Жатка 9 м</li>
+        <li>Вивантаження на ходу</li>
+        <li>Солом'яний різак</li>
+      </ul>
+    </div>
+    <div class="price-card">
+      <h3>Обприскування</h3>
+      <div class="price-amount">180</div>
+      <div class="price-unit">грн / га</div>
+      <ul class="price-features">
+        <li>Штанга 36 м</li>
+        <li>Рівномірне покриття</li>
+        <li>Секційне перекриття</li>
+        <li>Без вартості препарату</li>
+      </ul>
+    </div>
+    <div class="price-card">
+      <h3>Культивація</h3>
+      <div class="price-amount">220</div>
+      <div class="price-unit">грн / га</div>
+      <ul class="price-features">
+        <li>Дискова борона Horsch</li>
+        <li>Захват 8 м</li>
+        <li>Швидкість до 15 км/год</li>
+        <li>Передпосівна підготовка</li>
+      </ul>
+    </div>
+    <div class="price-card">
+      <h3>Перевезення зерна</h3>
+      <div class="price-amount">120</div>
+      <div class="price-unit">грн / тонна</div>
+      <ul class="price-features">
+        <li>КамАЗ 10 т</li>
+        <li>До елеватора/складу</li>
+        <li>Кагарлик, Миронівка</li>
+        <li>Оплата після доставки</li>
+      </ul>
+    </div>
+  </div>
+  <p style="margin-top:1.8rem;font-size:.83rem;color:var(--muted)">* Ціни орієнтовні. Точна вартість залежить від стану поля, відстані та обсягу. Знижки від 100 га.</p>
+</section>
+
+<!-- ═══ ВІДГУКИ ═══ -->
+<section id="відгуки">
+  <div class="sec-label">Що кажуть клієнти</div>
+  <h2>Відгуки</h2>
+  <p class="sec-intro">Нам довіряють фермерські господарства та агрофірми Київщини вже понад 10 років.</p>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>Замовляв оранку та посів озимої пшениці на 120 га. Всі роботи виконані вчасно і якісно. Техніка в ідеальному стані, жодних поломок. Вже другий рік працюємо — дуже задоволений результатом.</blockquote>
+      <div class="reviewer"><div class="avatar">ВК</div><div class="reviewer-info"><strong>Василь Коваленко</strong><span>Фермер, Кагарлицький р-н</span></div></div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>Дуже відповідальний підрядник. Олександр завжди на зв'язку, оперативно реагує. Збирання кукурудзи на 200 га провели за 4 дні — результат відмінний. Рекомендую всім!</blockquote>
+      <div class="reviewer"><div class="avatar">НП</div><div class="reviewer-info"><strong>Наталія Петренко</strong><span>ТОВ «Агро-Схід», Київ</span></div></div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★☆</div>
+      <blockquote>Третій сезон з ФОП Медведєвим. Ціни адекватні, якість висока. Особливо подобається точність GPS — поле рівне, глибина оранки дотримана, жодних огріхів. Перевезення зерна також без нарікань.</blockquote>
+      <div class="reviewer"><div class="avatar">ІС</div><div class="reviewer-info"><strong>Іван Сидоренко</strong><span>Голова КФГ, с. Стайки</span></div></div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>Замовляли обприскування соняшнику на 80 га. Приїхали наступного дня після дзвінка. Штанга 36 м — дуже швидко. Препарат рівномірно, жодних пропусків. Буду звертатись знову.</blockquote>
+      <div class="reviewer"><div class="avatar">ОМ</div><div class="reviewer-info"><strong>Олег Марченко</strong><span>ФГ «Марченко», Обухів</span></div></div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>Співпрацюємо п'ять сезонів. Ніколи не підводив по строках. Комбайн завжди налаштований під культуру, втрати мінімальні. За якістю — найкращий підрядник у районі.</blockquote>
+      <div class="reviewer"><div class="avatar">ТБ</div><div class="reviewer-info"><strong>Тетяна Бондаренко</strong><span>ПП «Бондаренко», Миронівка</span></div></div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>Звернувся вперше в цьому сезоні — посів ячменю на 55 га. Все зробили за один день, норма дотримана, рядки рівні. Ціна справедлива, документи надали одразу. Однозначно рекомендую!</blockquote>
+      <div class="reviewer"><div class="avatar">ДГ</div><div class="reviewer-info"><strong>Дмитро Гриценко</strong><span>Фермер, Кагарлик</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section id="faq" style="background:var(--white)">
+  <div class="sec-label">Запитання та відповіді</div>
+  <h2>FAQ</h2>
+  <p class="sec-intro" style="margin-bottom:2rem">Відповіді на найпоширеніші запитання наших клієнтів.</p>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Яка мінімальна площа для замовлення? <span class="arrow">▼</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Ми беремося за поля від 10 га. При менших площах вартість перегону техніки може бути неекономічною для клієнта. Але зателефонуйте — обговоримо індивідуально.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Скільки часу від замовлення до виїзду техніки? <span class="arrow">▼</span></button>
+      <div class="faq-a"><div class="faq-a-inner">У сезон — зазвичай 1–3 робочих дні. Якщо техніка вільна — можемо виїхати наступного дня. У пік збирання рекомендуємо бронювати заздалегідь за 5–7 днів.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Чи надаєте ви насіння або препарати для ЗЗР? <span class="arrow">▼</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Ні, ми надаємо лише послугу виконання робіт. Насіння, добрива та засоби захисту рослин замовник забезпечує самостійно. Ми можемо порекомендувати постачальників у регіоні.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Яка форма оплати? Можна безготівково? <span class="arrow">▼</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Так, приймаємо оплату готівкою і безготівково (на картку ФОП або за договором із НДС). Оплата після підписання акту виконаних робіт. Аванс не вимагаємо.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Чи є GPS-навігація на техніці? <span class="arrow">▼</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Так, John Deere 8R оснащений системою AutoTrac з точністю ±2.5 см. Це дозволяє уникати огріхів і перекриттів при посіві та обприскуванні — економія до 5% площі.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">На яку відстань від с. Стайки ви виїжджаєте? <span class="arrow">▼</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Основна зона роботи — Кагарлицький, Обухівський та Миронівський райони Київської області. При більшій відстані перегін техніки оплачується окремо за домовленістю.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Чи укладаєте ви офіційний договір? <span class="arrow">▼</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Так, укладаємо договір на надання агрономічних послуг, надаємо акт виконаних робіт та за потреби рахунок-фактуру. Всі документи відповідають вимогам бухгалтерського обліку.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ПАРТНЕРИ ═══ -->
+<section id="партнери">
+  <div class="sec-label">Нам довіряють</div>
+  <h2>Партнери та клієнти</h2>
+  <div class="partners-row">
+    <div class="partner-badge">ТОВ «Агро-Схід»</div>
+    <div class="partner-badge">ФГ «Коваленко»</div>
+    <div class="partner-badge">ПП «Бондаренко»</div>
+    <div class="partner-badge">КФГ «Стайки-Агро»</div>
+    <div class="partner-badge">ТОВ «Миронівські лани»</div>
+    <div class="partner-badge">ФГ «Гриценко»</div>
+    <div class="partner-badge">ПП «Обухів-Зерно»</div>
+    <div class="partner-badge">КФГ «Сидоренко»</div>
+  </div>
+</section>
+
+<!-- ═══ КОНТАКТИ ═══ -->
+<section id="контакти">
+  <div class="sec-label">Зв'яжіться з нами</div>
+  <h2>Контакти</h2>
+  <div class="divider"></div>
+  <div class="contact-wrapper">
+    <div class="contact-info">
+      <p>Готові відповісти на всі запитання та скласти індивідуальну пропозицію для вашого господарства. Телефонуйте — розкажемо про терміни і вартість.</p>
+      <div class="contact-item">
+        <div class="contact-item-icon">📞</div>
+        <div class="contact-item-text"><strong>Телефон</strong><a href="tel:+380501234567">+38 (050) 123-45-67</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">📱</div>
+        <div class="contact-item-text"><strong>Viber / Telegram</strong><a href="tel:+380671234567">+38 (067) 123-45-67</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">✉️</div>
+        <div class="contact-item-text"><strong>Email</strong><a href="mailto:medvedev.agro@gmail.com">medvedev.agro@gmail.com</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">📍</div>
+        <div class="contact-item-text"><strong>Розташування</strong><span>Київська область, с. Стайки, Кагарлицький р-н</span></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">🕐</div>
+        <div class="contact-item-text"><strong>Графік роботи</strong><span>Пн–Сб: 07:00 – 19:00</span></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">📄</div>
+        <div class="contact-item-text"><strong>ЄДРПОУ/ІПН</strong><span>ФОП — платник єдиного податку 3 групи</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="contact-form">
+        <div class="form-row">
+          <label>Ваше ім'я<input type="text" placeholder="Іван Іванов"/></label>
+          <label>Телефон<input type="tel" placeholder="+38 (0__) ___-__-__"/></label>
+        </div>
+        <div class="form-row">
+          <label>Площа поля (га)<input type="number" placeholder="наприклад, 50" min="0"/></label>
+          <label>Район<input type="text" placeholder="Кагарлицький р-н"/></label>
+        </div>
+        <label>Послуга
+          <select>
+            <option value="">— оберіть послугу —</option>
+            <option>Оранка та обробіток ґрунту</option>
+            <option>Посів зернових культур</option>
+            <option>Збирання врожаю</option>
+            <option>Внесення добрив та ЗЗР</option>
+            <option>Культивація та боронування</option>
+            <option>Перевезення зерна</option>
+            <option>Планування поверхні</option>
+            <option>Декілька послуг (комплекс)</option>
+            <option>Інше</option>
+          </select>
+        </label>
+        <label>Повідомлення<textarea placeholder="Опишіть запит: культура, строки, особливості поля…"></textarea></label>
+        <button class="btn-primary" onclick="sendForm()">Надіслати запит</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">ФОП Медведєв<br>Олександр Олександрович</div>
+      <p class="footer-tagline">Агропослуги на Київщині з 2014 року.<br>Довіра клієнтів — наша головна цінність.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Послуги</h4>
+      <ul>
+        <li><a href="#послуги">Оранка</a></li>
+        <li><a href="#послуги">Посів</a></li>
+        <li><a href="#послуги">Збирання врожаю</a></li>
+        <li><a href="#послуги">Обприскування</a></li>
+        <li><a href="#послуги">Перевезення зерна</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Інформація</h4>
+      <ul>
+        <li><a href="#техніка">Парк техніки</a></li>
+        <li><a href="#ціни">Ціни</a></li>
+        <li><a href="#відгуки">Відгуки</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#контакти">Контакти</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 ФОП Медведєв О.О. · Агропослуги · Київська обл., с. Стайки</span>
+    <span>Всі права захищено</span>
+  </div>
+</footer>
+
+<!-- ═══ MODAL ═══ -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" onclick="closeModal()" aria-label="Закрити">✕</button>
+    <p class="modal-title" id="modalTitle">Замовити послугу</p>
+    <p class="modal-subtitle">Заповніть форму — передзвонимо протягом 1 години</p>
+    <div class="modal-loc">📍 Київська область, с. Стайки</div>
+    <div class="modal-form">
+      <div class="modal-row">
+        <label>Ваше ім'я<input type="text" id="m-name" placeholder="Іван Іванов"/></label>
+        <label>Телефон<input type="tel" id="m-phone" placeholder="+38 (050) 000-00-00"/></label>
+      </div>
+      <label>Послуга
+        <select id="m-service">
+          <option value="">— оберіть послугу —</option>
+          <option>Оранка та обробіток ґрунту</option>
+          <option>Посів зернових культур</option>
+          <option>Збирання врожаю</option>
+          <option>Внесення добрив та ЗЗР</option>
+          <option>Культивація та боронування</option>
+          <option>Перевезення зерна</option>
+          <option>Декілька послуг (комплекс)</option>
+          <option>Інше</option>
+        </select>
+      </label>
+      <div class="modal-row">
+        <label>Площа поля (га)<input type="number" id="m-area" placeholder="напр. 50" min="0"/></label>
+        <label>Бажані строки<input type="text" id="m-date" placeholder="напр. червень 2025"/></label>
+      </div>
+      <label>Культура / Коментар<textarea id="m-comment" placeholder="Яка культура, район, особливості поля…"></textarea></label>
+      <button class="modal-btn" onclick="submitModal()">✅ Надіслати заявку</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+function openModal(){document.getElementById('modalOverlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('modalOverlay').classList.remove('open');document.body.style.overflow='';}
+function handleOverlayClick(e){if(e.target===document.getElementById('modalOverlay'))closeModal();}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+function submitModal(){
+  var n=document.getElementById('m-name').value.trim();
+  var p=document.getElementById('m-phone').value.trim();
+  if(!n||!p){alert("Будь ласка, введіть ім'я та телефон.");return;}
+  closeModal();
+  ['m-name','m-phone','m-service','m-area','m-date','m-comment'].forEach(function(id){document.getElementById(id).value='';});
+  showToast('✅ Заявку прийнято! Очікуйте дзвінка найближчим часом.');
+}
+function sendForm(){showToast('✅ Дякуємо! Ми зв\'яжемося з вами найближчим часом.');}
+function showToast(msg){
+  var t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(function(){t.classList.remove('show');},4000);
+}
+function toggleFaq(btn){
+  var item=btn.parentElement;
+  var wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!wasOpen)item.classList.add('open');
+}
+</script>
+</body>
+</html>
